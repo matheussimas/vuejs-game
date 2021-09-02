@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+
+    <title>MonsterKill</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <div class="panel scores">
+
+            <div class="score">
+                <h1>Player</h1>
+                <div class="life-bar">
+                    <div class="life"
+                    :class="{danger: playerLife < 25}"
+                    :style="{width: playerLife + '%'}"></div>
+                </div>
+                <div>{{ playerLife }}</div>
+
+            </div>
+
+            <div class="score">
+                <h1>Monster</h1>
+                <div class="life-bar">
+                    <div class="life"
+                    :class="{danger: monsterLife < 25}"
+                    :style="{width: monsterLife + '%'}"></div>
+                </div>
+                <div>{{ monsterLife }}</div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <div class="panel result" v-if="hasResult">
+            <div class="win" v-if="monsterLife == 0">You win!</div>
+            <div class="loose" v-if="playerLife == 0">You loose!</div>
+        </div>
+        <div class="panel buttons">
+            <button class="botao-iniciar" v-show="iniciar" @click="iniciar = !iniciar">Iniciar!</button>
+            <div v-show="iniciar == false">
+                <button @click="funcAtack">ATACK</button>
+                <button @click="funcSpecialAtack">SPECIAL</button>
+                <button @click="funcHeal">HEAL</button>
+                <button @click="funcQuit">QUIT</button>
+
+            </div>
+        </div>
+        <div class="panel logs"></div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
