@@ -69,3 +69,38 @@ html {
 .result .loose {
     background-color: red;
 }
+
+/*  buttons */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 5px 10px;
+    margin: 5px 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.start {
+    background-color: blue;
+}
+
+.atack {
+    background-color: red;
+}
+
+.special {
+    background-color: goldenrod;
+}
+
+.heal {
+    background-color: darkgreen;
+}
+
+.quit {
+    background-color: black;
+}
