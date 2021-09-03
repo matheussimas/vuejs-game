@@ -49,12 +49,12 @@
             <div class="loose" v-if="playerLife == 0">You loose!</div>
         </div>
         <div class="panel buttons">
-            <button class="btn start" v-show="running" @click="startGame">START</button>
-            <div v-show="running == false">
+            <button class="btn start" v-show="!running" @click="startGame">START</button>
+            <div v-show="running == true">
                 <button class="btn atack" @click="funcAtack">ATACK</button>
                 <button class="btn special" @click="funcSpecialAtack">SPECIAL</button>
                 <button class="btn heal" @click="funcHeal">HEAL</button>
-                <button class="btn quit" @click="">QUIT</button>
+                <button class="btn quit" @click="quitGame">QUIT</button>
 
             </div>
         </div>

@@ -4,7 +4,7 @@ new Vue({
     data: {
         playerLife: 100, 
         monsterLife: 100,
-        running: true,
+        running: false,
     },
     
     computed: {
@@ -18,7 +18,8 @@ new Vue({
             this.running = !this.running
             this.monsterLife = 100
             this.playerLife = 100
-        }
+        },
+
     },
 
     watch: {
