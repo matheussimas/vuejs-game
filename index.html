@@ -50,11 +50,12 @@
         </div>
         <div class="panel buttons">
             <button class="btn start" v-show="!running" @click="startGame">START</button>
-            <div v-show="running == true">
-                <button class="btn atack" @click="funcAtack">ATACK</button>
-                <button class="btn special" @click="funcSpecialAtack">SPECIAL</button>
+            <div v-if="running == true">
+                
+                <button class="btn atack" @click="funcAtack(false)">ATACK</button>
+                <button class="btn special" @click="funcAtack(true)">SPECIAL</button>
                 <button class="btn heal" @click="funcHeal">HEAL</button>
-                <button class="btn quit" @click="quitGame">QUIT</button>
+                <button @click="running = false" class="btn quit">QUIT</button>
 
             </div>
         </div>
